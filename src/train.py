@@ -5,8 +5,7 @@ def train_dqn(env, agent, episodes, epsilon_start=1.0, epsilon_end=0.1, epsilon_
     epsilon = epsilon_start
     for episode in range(episodes):
         state = env.reset()
-        print(state)
-        state = np.transpose(state, (2, 0, 1))  # Channels first pour PyTorch
+        state = np.transpose(state[0], (2, 0, 1))
         done = False
         total_reward = 0
 
