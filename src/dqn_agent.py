@@ -6,7 +6,7 @@ import random
 from model import DQN
 
 class DQNAgent:
-    def __init__(self, input_shape, num_actions, lr=1e-4, gamma=0.99, batch_size=32, buffer_size=10000):
+    def __init__(self, input_shape, num_actions, actions, lr=1e-4, gamma=0.99, batch_size=32, buffer_size=10000):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model = DQN(input_shape, num_actions).to(self.device)
         self.target_model = DQN(input_shape, num_actions).to(self.device)
@@ -17,15 +17,18 @@ class DQNAgent:
         self.batch_size = batch_size
         self.replay_buffer = deque(maxlen=buffer_size)
         self.num_actions = num_actions
+        self.actions = actions  # Action mapping
 
     def choose_action(self, state, epsilon):
         if random.random() < epsilon:
-            return random.randint(0, self.num_actions - 1)
+            action_idx = random.randint(0, self.num_actions - 1)
         else:
             state = torch.tensor(state, dtype=torch.float32).unsqueeze(0).to(self.device)
             with torch.no_grad():
                 q_values = self.model(state)
-            return q_values.argmax().item()
+            action_idx = q_values.argmax().item()
+        action = self.actions[action_idx]
+        return action_idx, action
 
     def store_transition(self, transition):
         self.replay_buffer.append(transition)
@@ -50,7 +53,7 @@ class DQNAgent:
         next_q_values = self.target_model(next_states).max(1)[0]
         target_q_values = rewards + (1 - dones) * self.gamma * next_q_values
 
-        loss = self.loss_fn(q_values, target_q_values)
+        loss = self.loss_fn(q_values, target_q_values.detach())
         self.optimizer.zero_grad()
         loss.backward()
         self.optimizer.step()
