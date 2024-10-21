@@ -10,5 +10,5 @@ dependencies = [
     "numpy==1.26.4",
     "opencv-python>=4.10.0.84",
     "tqdm>=4.66.5",
-    "torch>=2.2.0",
+    "torch==2.2.0",
 ]
