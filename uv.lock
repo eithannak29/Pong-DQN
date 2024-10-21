@@ -13,6 +13,26 @@ resolution-markers = [
 ]
 
 [[package]]
+name = "ale-py"
+version = "0.8.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "importlib-resources" },
+    { name = "numpy" },
+    { name = "typing-extensions", marker = "python_full_version < '3.11'" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e1/f6/6d8cb491611e5424421a1878e42ee78a9edf9a0b08b1a05565ec92c4da10/ale_py-0.8.1-cp310-cp310-macosx_10_15_x86_64.whl", hash = "sha256:b2aa2f69a4169742800615970efe6914fa856e33eaf7fa9133c0e06a617a80e2", size = 1145153 },
+    { url = "https://files.pythonhosted.org/packages/f9/ae/b0af1c760b8a5b62f1ac3ca09ed0edadd1e5744e87dbdf5bf17dda5334c6/ale_py-0.8.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:6f2f6b92c8fd6189654979bbf0b305dbe0ecf82176c47f244d8c1cbc36286b89", size = 1047638 },
+    { url = "https://files.pythonhosted.org/packages/74/0a/b1e87c6470cf2993470f68f4a3d7d79c47a523f116a239c49ac090707aaa/ale_py-0.8.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c9b168eb88c87d0f3e2a778e6c5cdde4ad951d1ca8a6dc3d3679fd45398df7d1", size = 1656758 },
+    { url = "https://files.pythonhosted.org/packages/8d/2d/3084ab21dab8b35f7be6e762fc7dd7651971b87cf58a8e1a1b1c2975b616/ale_py-0.8.1-cp310-cp310-win_amd64.whl", hash = "sha256:5fcc31f495de79ee1d6bfc0f4b7c4619948851e679bbf010035e25f23146a687", size = 952445 },
+    { url = "https://files.pythonhosted.org/packages/4b/95/bb267ed80f590ce7fec5ceaaf7b3ec4881538c747da704005cfd0d22325f/ale_py-0.8.1-cp311-cp311-macosx_10_15_x86_64.whl", hash = "sha256:0856ca777473ec4ae8a59f3af9580259adb0fd4a47d586a125a440c62e82fc10", size = 1145037 },
+    { url = "https://files.pythonhosted.org/packages/67/3f/3f53173019d153c07025f0387cce61e2d6bccd3d82cdbffb98402388c4bc/ale_py-0.8.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:f10b1df8774bbe3b00365748b5e0e07cf35f6a703bbaff991bc7b3b2247dccc9", size = 1047623 },
+    { url = "https://files.pythonhosted.org/packages/29/84/52f94d9948e1800337c91ad19bafd36cf05745352416a7ce5fac68c2a55e/ale_py-0.8.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:0006d80dfe7745eb5a93444492337203c8bc7eb594a2c24c6a651c5c5b0eaf09", size = 1657057 },
+    { url = "https://files.pythonhosted.org/packages/b2/a5/f93747205056eb741d1a34acb34b69ea0a46ef9eee4699e0a1cb67628646/ale_py-0.8.1-cp311-cp311-win_amd64.whl", hash = "sha256:9773eea7505484e024beb2fff0f3bfd363db151bdb9799d70995448e196b1ded", size = 952350 },
+]
+
+[[package]]
 name = "cloudpickle"
 version = "3.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -169,6 +189,11 @@ dependencies = [
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/ab/b1/eb05a423eb801ab7d0715d6a3b28d92589e30b437052553df19ca2087240/gym-0.26.2.tar.gz", hash = "sha256:e0d882f4b54f0c65f203104c24ab8a38b039f1289986803c7d02cdbe214fbcc4", size = 721689 }
 
+[package.optional-dependencies]
+atari = [
+    { name = "ale-py" },
+]
+
 [[package]]
 name = "gym-notices"
 version = "0.0.8"
@@ -176,6 +201,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/b4/62/d312681b09cacf77d04237a2815653c58e5031998bb613ce114b85fc3f57/gym-notices-0.0.8.tar.gz", hash = "sha256:ad25e200487cafa369728625fe064e88ada1346618526102659b4640f2b4b911", size = 2685 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/25/26/d786c6bec30fe6110fd3d22c9a273a2a0e56c0b73b93e25ea1af5a53243b/gym_notices-0.0.8-py3-none-any.whl", hash = "sha256:e5f82e00823a166747b4c2a07de63b6560b1acb880638547e0cabf825a01e463", size = 2965 },
+]
+
+[[package]]
+name = "importlib-resources"
+version = "6.4.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/98/be/f3e8c6081b684f176b761e6a2fef02a0be939740ed6f54109a2951d806f3/importlib_resources-6.4.5.tar.gz", hash = "sha256:980862a1d16c9e147a59603677fa2aa5fd82b87f223b6cb870695bcfce830065", size = 43372 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e1/6a/4604f9ae2fa62ef47b9de2fa5ad599589d28c9fd1d335f32759813dfa91e/importlib_resources-6.4.5-py3-none-any.whl", hash = "sha256:ac29d5f956f01d5e4bb63102a5a19957f1b9175e45649977264a1416783bb717", size = 36115 },
 ]
 
 [[package]]
@@ -461,7 +495,7 @@ name = "nvidia-cudnn-cu12"
 version = "8.9.2.26"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu12" },
+    { name = "nvidia-cublas-cu12", marker = "(platform_machine != 'aarch64' and platform_system != 'Darwin') or (platform_system != 'Darwin' and platform_system != 'Linux')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ff/74/a2e2be7fb83aaedec84f391f082cf765dfb635e7caa9b49065f73e4835d8/nvidia_cudnn_cu12-8.9.2.26-py3-none-manylinux1_x86_64.whl", hash = "sha256:5ccb288774fdfb07a7e7025ffec286971c06d8d7b4fb162525334616d7629ff9", size = 731725872 },
@@ -488,9 +522,9 @@ name = "nvidia-cusolver-cu12"
 version = "11.4.5.107"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu12" },
-    { name = "nvidia-cusparse-cu12" },
-    { name = "nvidia-nvjitlink-cu12" },
+    { name = "nvidia-cublas-cu12", marker = "(platform_machine != 'aarch64' and platform_system != 'Darwin') or (platform_system != 'Darwin' and platform_system != 'Linux')" },
+    { name = "nvidia-cusparse-cu12", marker = "(platform_machine != 'aarch64' and platform_system != 'Darwin') or (platform_system != 'Darwin' and platform_system != 'Linux')" },
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and platform_system != 'Darwin') or (platform_system != 'Darwin' and platform_system != 'Linux')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/bc/1d/8de1e5c67099015c834315e333911273a8c6aaba78923dd1d1e25fc5f217/nvidia_cusolver_cu12-11.4.5.107-py3-none-manylinux1_x86_64.whl", hash = "sha256:8a7ec542f0412294b15072fa7dab71d31334014a69f953004ea7a118206fe0dd", size = 124161928 },
@@ -501,7 +535,7 @@ name = "nvidia-cusparse-cu12"
 version = "12.1.0.106"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-nvjitlink-cu12" },
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine != 'aarch64' and platform_system != 'Darwin') or (platform_system != 'Darwin' and platform_system != 'Linux')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/65/5b/cfaeebf25cd9fdec14338ccb16f6b2c4c7fa9163aefcf057d86b9cc248bb/nvidia_cusparse_cu12-12.1.0.106-py3-none-manylinux1_x86_64.whl", hash = "sha256:f3b50f42cf363f86ab21f720998517a659a48131e8d538dc02f8768237bd884c", size = 195958278 },
@@ -630,7 +664,7 @@ name = "pong-dqn"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "gym" },
+    { name = "gym", extra = ["atari"] },
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "opencv-python" },
@@ -641,6 +675,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "gym", specifier = ">=0.26.2" },
+    { name = "gym", extras = ["atari"] },
     { name = "matplotlib", specifier = ">=3.9.2" },
     { name = "numpy", specifier = "==1.26.4" },
     { name = "opencv-python", specifier = ">=4.10.0.84" },
@@ -749,7 +784,7 @@ name = "triton"
 version = "2.2.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "filelock" },
+    { name = "filelock", marker = "(platform_machine != 'aarch64' and platform_system != 'Darwin') or (platform_system != 'Darwin' and platform_system != 'Linux')" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/95/05/ed974ce87fe8c8843855daa2136b3409ee1c126707ab54a8b72815c08b49/triton-2.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a2294514340cfe4e8f4f9e5c66c702744c4a117d25e618bd08469d0bfed1e2e5", size = 167900779 },
