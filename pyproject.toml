@@ -13,4 +13,5 @@ dependencies = [
     "tqdm>=4.66.5",
     "torch==2.2.0",
     "ipykernel>=6.29.5",
+    "tensorboard>=2.18.0",
 ]
