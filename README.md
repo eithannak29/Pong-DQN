@@ -7,10 +7,7 @@
 
 ## 📽️ **Demonstration**
 <p align="center">
-  <video autoplay loop muted playsinline width="300">
-    <source src="src/videos/pong_dqn.gif" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <img src="src/videos/pong_dqn.gif" alt="PONG DQN Gameplay Demo" width="300">
 </p>
 
 ---
