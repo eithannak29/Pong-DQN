@@ -7,7 +7,7 @@
 
 ## 📽️ **Demonstration**
 <p align="center">
-  <img src="src/videos/pong_dqn.gif" alt="PONG DQN Gameplay Demo" width="600">
+  <img src="src/videos/pong_dqn.gif" alt="PONG DQN Gameplay Demo" width="300">
 </p>
 
 ---
